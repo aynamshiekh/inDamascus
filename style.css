@@ -1,0 +1,793 @@
+/* ============================================================
+   ملف الأنماط المشترك لموقع "دليل دمشق السياحي"
+   تصميم حديث 2026: واجهة داكنة أنيقة + حواف منحنية كبيرة (Modern Curved UI)
+   لكل صفحة لون مميّز (Theme) ضمن هوية بصرية موحّدة
+   مكتوب بلغة CSS فقط (بدون JavaScript)
+   ============================================================ */
+
+
+/* ============================================================
+   1) متغيّرات التصميم (Design Tokens)
+   القيم العامة الموحّدة + القيم الافتراضية للسمة اللونية
+   ============================================================ */
+:root {
+    /* ألوان النصوص (موحّدة لكل الصفحات) */
+    --نص: #ECE6DC;            /* نص فاتح دافئ */
+    --نص-خافت: #A8A29A;       /* نص ثانوي هادئ */
+    --على-اللون: #FFFFFF;     /* نص فوق اللون المميّز */
+
+    /* حدود خفيفة شفّافة */
+    --حد: rgba(255, 255, 255, 0.08);
+    --حد-أوضح: rgba(255, 255, 255, 0.16);
+
+    /* الحواف المنحنية الكبيرة (Curved UI) */
+    --حواف-صغيرة: 18px;
+    --حواف: 24px;
+    --حواف-كبيرة: 30px;
+    --حبّة: 999px;           /* شكل الحبّة الكامل للأزرار والشارات */
+
+    /* الظلال الناعمة الداكنة */
+    --ظل: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --ظل-قوي: 0 22px 55px rgba(0, 0, 0, 0.55);
+
+    /* مدة الحركات الانتقالية */
+    --انتقال: 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+
+    /* ===== القيم الافتراضية للسمة (تُستبدل عبر أصناف theme-* على body) ===== */
+    --خلفية: #0F1620;         /* خلفية الصفحة الداكنة */
+    --سطح: #18212E;           /* خلفية البطاقات */
+    --سطح-2: #202C3D;         /* خلفية ثانوية */
+    --مميّز: #5B82BE;         /* اللون المميّز للصفحة */
+    --مميّز-فاتح: #86A6D8;    /* لون مميّز أفتح للمرور */
+    --مميّز-شفّاف: rgba(91, 130, 190, 0.16);
+}
+
+
+/* ============================================================
+   2) السمات اللونية لكل صفحة (Per-page Themes)
+   كل صنف يُضاف على وسم <body> ويغيّر اللون المميّز وتدرّج الخلفية
+   مع بقاء البنية (الداكن + الحواف المنحنية) موحّدة للموقع كله
+   ============================================================ */
+
+/* كحلي داكن — الصفحة الرئيسية */
+.theme-navy {
+    --خلفية: #0F1620; --سطح: #18212E; --سطح-2: #202C3D;
+    --مميّز: #5B82BE; --مميّز-فاتح: #92AFDC; --مميّز-شفّاف: rgba(91, 130, 190, 0.16);
+}
+/* أزرق مخضرّ داكن — المعالم */
+.theme-teal {
+    --خلفية: #0B1716; --سطح: #112321; --سطح-2: #16302D;
+    --مميّز: #33A093; --مميّز-فاتح: #66CABE; --مميّز-شفّاف: rgba(51, 160, 147, 0.16);
+}
+/* بنّي داكن — التراث */
+.theme-brown {
+    --خلفية: #15100A; --سطح: #221A11; --سطح-2: #2E2316;
+    --مميّز: #B47C46; --مميّز-فاتح: #DBA86F; --مميّز-شفّاف: rgba(180, 124, 70, 0.16);
+}
+/* عنّابي داكن — الأطعمة */
+.theme-burgundy {
+    --خلفية: #160B0E; --سطح: #231116; --سطح-2: #30171F;
+    --مميّز: #B14B5E; --مميّز-فاتح: #DA8294; --مميّز-شفّاف: rgba(177, 75, 94, 0.16);
+}
+/* زمرّدي داكن — البرنامج السياحي */
+.theme-emerald {
+    --خلفية: #0A1611; --سطح: #102019; --سطح-2: #162B21;
+    --مميّز: #34A06A; --مميّز-فاتح: #67C998; --مميّز-شفّاف: rgba(52, 160, 106, 0.16);
+}
+/* بنفسجي داكن — التواصل */
+.theme-purple {
+    --خلفية: #110E1A; --سطح: #1B1626; --سطح-2: #251E33;
+    --مميّز: #7E5CB0; --مميّز-فاتح: #AB8FD8; --مميّز-شفّاف: rgba(126, 92, 176, 0.16);
+}
+
+
+/* ============================================================
+   3) إعادة الضبط العام (Reset)
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;   /* تمرير ناعم لروابط الإرساء (#) */
+}
+
+
+/* ============================================================
+   4) التنسيق العام للصفحة (Body & Typography)
+   اتجاه RTL + خلفية داكنة بلمسة لونية خفيفة حسب سمة الصفحة
+   ============================================================ */
+body {
+    font-family: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+    direction: rtl;
+    text-align: right;
+    color: var(--نص);
+    line-height: 1.85;
+    /* توهّج لوني خفيف أعلى الصفحة يعكس لون السمة + الخلفية الداكنة */
+    background:
+        radial-gradient(1100px 560px at 100% -8%, var(--مميّز-شفّاف), transparent 60%),
+        var(--خلفية);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* حاوية مركزية لضبط العرض الأقصى */
+.container {
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: var(--نص);
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--مميّز-فاتح);
+    transition: color var(--انتقال);
+}
+
+
+/* ============================================================
+   5) شريط التنقل (Navbar)
+   شريط عائم بحواف كاملة (حبّة) وخلفية زجاجية ضبابية
+   ============================================================ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 16px 0;
+    background: transparent;
+}
+
+/* الحاوية الداخلية هي "الحبّة" العائمة */
+.navbar-container {
+    width: 92%;
+    max-width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 20px;
+    background: var(--سطح);
+    border: 1px solid var(--حد);
+    border-radius: var(--حبّة);
+    box-shadow: var(--ظل);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--مميّز-فاتح);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo:hover { color: var(--نص); }
+
+/* روابط التنقل */
+.nav-links {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--نص-خافت);
+    padding: 9px 16px;
+    border-radius: var(--حبّة);
+    font-weight: 600;
+    font-size: 0.97rem;
+    transition: all var(--انتقال);
+}
+
+.nav-links a:hover {
+    background: var(--مميّز-شفّاف);
+    color: var(--مميّز-فاتح);
+}
+
+/* الصفحة الحالية: تعبئة باللون المميّز */
+.nav-links a.active {
+    background: var(--مميّز);
+    color: var(--على-اللون);
+}
+
+
+/* ============================================================
+   6) القسم الرئيسي والترويسات (Hero & Page Header)
+   لوحة كبيرة بحواف منحنية فوق صورة مع تعتيم لإبراز النص
+   ============================================================ */
+.hero,
+.page-header {
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - 32px);
+    max-width: 1320px;
+    margin: 10px auto 0;
+    border-radius: var(--حواف-كبيرة);
+    box-shadow: var(--ظل-قوي);
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.hero {
+    padding: 130px 28px;
+    background:
+        linear-gradient(180deg, rgba(8, 10, 14, 0.45), rgba(8, 10, 14, 0.80)),
+        url('images/damascus-old.jpg') center/cover no-repeat;
+}
+
+.page-header {
+    padding: 86px 28px;
+    background:
+        linear-gradient(180deg, rgba(8, 10, 14, 0.50), rgba(8, 10, 14, 0.82)),
+        url('images/damascus-old.jpg') center/cover no-repeat;
+}
+
+/* توهّج لوني خفيف بلون السمة في زاوية اللوحة */
+.hero::after,
+.page-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(620px 320px at 88% 12%, var(--مميّز-شفّاف), transparent 70%);
+    pointer-events: none;
+}
+
+.hero h1 {
+    color: #FFFFFF;
+    font-size: 3.2rem;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 680px;
+    margin: 0 auto 30px;
+    color: #EFEAE2;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.page-header h1 {
+    color: #FFFFFF;
+    font-size: 2.6rem;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.page-header p {
+    font-size: 1.15rem;
+    margin-top: 12px;
+    color: #EFEAE2;
+}
+
+
+/* ============================================================
+   7) الأزرار (Buttons)
+   شكل حبّة كامل + تعبئة باللون المميّز + رفع عند المرور
+   ============================================================ */
+.btn {
+    display: inline-block;
+    background: var(--مميّز);
+    color: var(--على-اللون);
+    padding: 14px 34px;
+    border-radius: var(--حبّة);
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all var(--انتقال);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.btn:hover {
+    background: var(--مميّز-فاتح);
+    color: #10130F;
+    transform: translateY(-3px);
+    box-shadow: var(--ظل-قوي);
+}
+
+
+/* ============================================================
+   8) الأقسام والعناوين (Sections)
+   ============================================================ */
+.section {
+    padding: 84px 0;
+}
+
+/* لوحة قسم بحواف منحنية كبيرة (بديلة عن الخلفية المسطّحة) */
+.section-panel {
+    background: var(--سطح);
+    border: 1px solid var(--حد);
+    border-radius: var(--حواف-كبيرة);
+    width: calc(100% - 32px);
+    max-width: 1320px;
+    margin: 26px auto;
+}
+
+/* عنوان القسم مع خط مميّز زخرفي تحته */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: var(--نص);
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: var(--مميّز);
+    margin: 16px auto 0;
+    border-radius: var(--حبّة);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--نص-خافت);
+    max-width: 700px;
+    margin: 0 auto 48px;
+    font-size: 1.1rem;
+}
+
+
+/* ============================================================
+   9) شبكة البطاقات (Cards Grid)
+   صور داخلية بحواف منحنية (مظهر "عائم" حديث)
+   ============================================================ */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background: var(--سطح);
+    border: 1px solid var(--حد);
+    border-radius: var(--حواف);
+    padding: 14px;
+    box-shadow: var(--ظل);
+    transition: transform var(--انتقال), box-shadow var(--انتقال), border-color var(--انتقال);
+}
+
+/* رفع البطاقة وإبراز حدّها باللون المميّز عند المرور */
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--مميّز);
+    box-shadow: var(--ظل-قوي);
+}
+
+/* الصورة الداخلية بحواف منحنية مستقلّة */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--حواف-صغيرة);
+}
+
+.card-body {
+    padding: 18px 12px 8px;
+}
+
+.card-body h3 {
+    color: var(--نص);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    color: var(--نص-خافت);
+    font-size: 1rem;
+}
+
+/* رابط داخل البطاقة */
+.card-body a {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 700;
+    color: var(--مميّز-فاتح);
+}
+
+/* شارة صغيرة (badge) */
+.badge {
+    display: inline-block;
+    background: var(--مميّز-شفّاف);
+    color: var(--مميّز-فاتح);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: var(--حبّة);
+    margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   10) قسم النبذة (About / Intro)
+   نص وصورة جنباً إلى جنب باستخدام Flexbox
+   ============================================================ */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.about-text,
+.about-image {
+    flex: 1 1 320px;
+}
+
+.about-text h2 {
+    font-size: 2.1rem;
+    margin-bottom: 18px;
+}
+
+.about-text p {
+    color: var(--نص-خافت);
+    margin-bottom: 16px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: var(--حواف-كبيرة);
+    box-shadow: var(--ظل-قوي);
+    border: 1px solid var(--حد);
+}
+
+
+/* ============================================================
+   11) قسم المميّزات (Features)
+   بطاقات صغيرة برموز تعبيرية باستخدام Grid
+   ============================================================ */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.feature {
+    background: var(--سطح-2);
+    border: 1px solid var(--حد);
+    text-align: center;
+    padding: 36px 24px;
+    border-radius: var(--حواف);
+    transition: transform var(--انتقال), border-color var(--انتقال);
+}
+
+.feature:hover {
+    transform: translateY(-7px);
+    border-color: var(--مميّز);
+}
+
+.feature .icon {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+    color: var(--نص);
+}
+
+.feature p {
+    color: var(--نص-خافت);
+    font-size: 0.97rem;
+}
+
+
+/* ============================================================
+   12) نموذج التواصل (Contact Form)
+   ============================================================ */
+.form-wrapper {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+}
+
+.contact-form,
+.contact-info {
+    flex: 1 1 320px;
+}
+
+.contact-form {
+    background: var(--سطح);
+    border: 1px solid var(--حد);
+    padding: 36px;
+    border-radius: var(--حواف-كبيرة);
+    box-shadow: var(--ظل);
+}
+
+.contact-form h2 {
+    margin-bottom: 24px;
+    color: var(--نص);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--نص);
+}
+
+/* الحقول: خلفية داكنة + حواف منحنية + تركيز ملوّن */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--حد-أوضح);
+    border-radius: var(--حواف-صغيرة);
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--سطح-2);
+    color: var(--نص);
+    transition: border-color var(--انتقال), box-shadow var(--انتقال);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--نص-خافت);
+}
+
+/* تأثير التركيز: إطار وتوهّج باللون المميّز */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--مميّز);
+    box-shadow: 0 0 0 4px var(--مميّز-شفّاف);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* بطاقة معلومات التواصل */
+.contact-info {
+    background: var(--سطح-2);
+    border: 1px solid var(--حد);
+    color: var(--نص);
+    padding: 36px;
+    border-radius: var(--حواف-كبيرة);
+}
+
+.contact-info h3 {
+    color: var(--مميّز-فاتح);
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+}
+
+.info-intro {
+    color: var(--نص-خافت);
+    margin-bottom: 26px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    color: var(--نص);
+}
+
+.info-item .icon {
+    font-size: 1.4rem;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--مميّز-شفّاف);
+    border-radius: var(--حبّة);
+}
+
+
+/* ============================================================
+   13) التذييل (Footer)
+   حواف منحنية علوية + خلفية سطح + أعمدة Grid
+   ============================================================ */
+.footer {
+    background: var(--سطح);
+    border-top: 1px solid var(--حد);
+    border-radius: var(--حواف-كبيرة) var(--حواف-كبيرة) 0 0;
+    color: var(--نص);
+    padding: 54px 0 24px;
+    margin-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col h3 {
+    color: var(--مميّز-فاتح);
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+}
+
+.footer-col p {
+    color: var(--نص-خافت);
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: var(--نص-خافت);
+    display: block;
+    margin-bottom: 8px;
+    transition: color var(--انتقال), padding var(--انتقال);
+}
+
+.footer-col a:hover {
+    color: var(--مميّز-فاتح);
+    padding-right: 6px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 22px;
+    border-top: 1px solid var(--حد);
+    color: var(--نص-خافت);
+    font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   14) المخطّط الزمني للبرنامج السياحي (Timeline)
+   خط زمني عمودي بنقاط ملوّنة وبطاقات منحنية
+   ============================================================ */
+.timeline {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/* الخط العمودي على جهة اليمين (RTL) */
+.timeline::before {
+    content: "";
+    position: absolute;
+    right: 28px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(var(--مميّز), transparent);
+    border-radius: var(--حبّة);
+}
+
+.timeline-item {
+    position: relative;
+    padding-right: 78px;
+    margin-bottom: 34px;
+}
+
+/* النقطة الدائرية على الخط */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 28px;
+    width: 24px;
+    height: 24px;
+    background: var(--مميّز);
+    border: 5px solid var(--خلفية);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--مميّز);
+    z-index: 2;
+}
+
+/* بطاقة المحطّة: صورة + محتوى عبر Flexbox */
+.timeline-card {
+    display: flex;
+    gap: 6px;
+    background: var(--سطح);
+    border: 1px solid var(--حد);
+    border-radius: var(--حواف);
+    padding: 14px;
+    box-shadow: var(--ظل);
+    transition: transform var(--انتقال), box-shadow var(--انتقال), border-color var(--انتقال);
+}
+
+.timeline-card:hover {
+    transform: translateX(-8px);
+    border-color: var(--مميّز);
+    box-shadow: var(--ظل-قوي);
+}
+
+.timeline-card img {
+    width: 210px;
+    height: 160px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: var(--حواف-صغيرة);
+}
+
+.timeline-card-body {
+    padding: 8px 14px;
+    flex: 1;
+}
+
+/* شارة الوقت */
+.timeline-time {
+    display: inline-block;
+    background: var(--مميّز);
+    color: var(--على-اللون);
+    padding: 5px 16px;
+    border-radius: var(--حبّة);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.timeline-card-body h3 {
+    color: var(--نص);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.timeline-card-body p {
+    color: var(--نص-خافت);
+}
+
+
+/* ============================================================
+   15) التصميم المتجاوب (Responsive — Media Queries)
+   ============================================================ */
+
+/* الأجهزة اللوحية والشاشات المتوسطة */
+@media (max-width: 768px) {
+    /* شريط تنقل عمودي متمركز */
+    .navbar-container {
+        flex-direction: column;
+        gap: 12px;
+        border-radius: var(--حواف-كبيرة);
+    }
+
+    .nav-links { justify-content: center; }
+
+    .hero { padding: 96px 18px; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1.1rem; }
+
+    .page-header { padding: 64px 18px; }
+    .page-header h1 { font-size: 2rem; }
+
+    .about { flex-direction: column; }
+    .section-title { font-size: 1.8rem; }
+
+    /* الخط الزمني: تقريب الخط وتحويل البطاقة لعمود */
+    .timeline-item { padding-right: 54px; }
+    .timeline::before { right: 18px; }
+    .timeline-item::before { right: 8px; }
+
+    .timeline-card { flex-direction: column; }
+    .timeline-card img { width: 100%; height: 190px; }
+}
+
+/* الهواتف الصغيرة */
+@media (max-width: 480px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.9rem; }
+    .section { padding: 54px 0; }
+    .nav-links a { padding: 7px 13px; font-size: 0.92rem; }
+}

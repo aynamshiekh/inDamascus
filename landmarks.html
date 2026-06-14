@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     صفحة المعالم السياحية في مدينة دمشق
+     ============================================================ -->
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دمشق | المعالم السياحية</title>
+
+    <!-- استدعاء الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف الأنماط المشترك -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-teal">
+
+    <!-- ===== شريط التنقل المشترك ===== -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">🕌 دمشق</a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="landmarks.html" class="active">المعالم</a>
+                <a href="heritage.html">التراث</a>
+                <a href="food.html">الأطعمة</a>
+                <a href="tour-plan.html">البرنامج</a>
+                <a href="contact.html">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== ترويسة الصفحة الداخلية ===== -->
+    <section class="page-header">
+        <h1>المعالم السياحية</h1>
+        <p>أبرز المواقع التاريخية والأثرية التي تروي حكاية دمشق عبر العصور.</p>
+    </section>
+
+    <!-- ===== شبكة بطاقات المعالم (CSS Grid) ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">معالم لا تفوّتها</h2>
+            <p class="section-subtitle">جولة بين أهم المعالم التي تجسّد عراقة المدينة وجمالها.</p>
+
+            <div class="cards-grid">
+                <!-- المعلم 1: المسجد الأموي -->
+                <article class="card">
+                    <img src="images/umayyad-mosque.jpg" alt="المسجد الأموي الكبير">
+                    <div class="card-body">
+                        <span class="badge">معلم ديني</span>
+                        <h3>المسجد الأموي الكبير</h3>
+                        <p>تحفة معمارية إسلامية بُنيت في القرن الثامن الميلادي، ويُعدّ من أقدم وأعظم المساجد في العالم.</p>
+                    </div>
+                </article>
+
+                <!-- المعلم 2: قلعة دمشق -->
+                <article class="card">
+                    <img src="images/citadel.jpg" alt="قلعة دمشق">
+                    <div class="card-body">
+                        <span class="badge">معلم أثري</span>
+                        <h3>قلعة دمشق</h3>
+                        <p>حصن تاريخي يقع في الزاوية الشمالية الغربية للمدينة القديمة، شاهدٌ على تاريخ عسكري طويل.</p>
+                    </div>
+                </article>
+
+                <!-- المعلم 3: سوق الحميدية -->
+                <article class="card">
+                    <img src="images/hamidiyah-souq.jpg" alt="سوق الحميدية">
+                    <div class="card-body">
+                        <span class="badge">سوق تاريخي</span>
+                        <h3>سوق الحميدية</h3>
+                        <p>أشهر أسواق دمشق المسقوفة، يمتد بطرازه التراثي ويعجّ بمحلات الأقمشة والحلويات والتحف.</p>
+                    </div>
+                </article>
+
+                <!-- المعلم 4: الشارع المستقيم -->
+                <article class="card">
+                    <img src="images/straight-street.jpg" alt="الشارع المستقيم">
+                    <div class="card-body">
+                        <span class="badge">شارع تاريخي</span>
+                        <h3>الشارع المستقيم</h3>
+                        <p>المعروف بـ«باب شرقي»، شارع روماني عريق يخترق المدينة القديمة ذُكر في النصوص القديمة.</p>
+                    </div>
+                </article>
+
+                <!-- المعلم 5: التكية السليمانية -->
+                <article class="card">
+                    <img src="images/tekkiye.jpg" alt="التكية السليمانية">
+                    <div class="card-body">
+                        <span class="badge">عمارة عثمانية</span>
+                        <h3>التكية السليمانية</h3>
+                        <p>مجمّع معماري عثماني أنيق على ضفاف بردى، يتميّز بقبابه ومآذنه الرشيقة وحدائقه.</p>
+                    </div>
+                </article>
+
+                <!-- المعلم 6: جبل قاسيون -->
+                <article class="card">
+                    <img src="images/qasioun.jpg" alt="جبل قاسيون">
+                    <div class="card-body">
+                        <span class="badge">إطلالة طبيعية</span>
+                        <h3>جبل قاسيون</h3>
+                        <p>يطلّ على دمشق بأكملها، ومنه تُشاهَد المدينة في أبهى صورها خاصةً عند الغروب وفي الليل.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== التذييل المشترك ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>🕌 دمشق</h3>
+                    <p>موقع تعريفي بمدينة دمشق، أقدم عاصمة مأهولة في التاريخ ومدينة الياسمين.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="landmarks.html">المعالم السياحية</a>
+                    <a href="heritage.html">التراث والثقافة</a>
+                    <a href="food.html">الأطعمة والمطاعم</a>
+                    <a href="tour-plan.html">برنامج سياحي ليوم</a>
+                </div>
+                <div class="footer-col">
+                    <h3>تواصل معنا</h3>
+                    <p>📍 دمشق، سوريا</p>
+                    <p>📞 +963 11 000 0000</p>
+                    <p>✉️ info@damascus.sy</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 موقع التعريف بمدينة دمشق — جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

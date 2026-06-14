@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     الصفحة الرئيسية لموقع التعريف بمدينة دمشق
+     lang="ar" و dir="rtl" لضبط اللغة والاتجاه
+     ============================================================ -->
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <!-- ضبط العرض ليتجاوب مع الأجهزة المحمولة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دمشق | الصفحة الرئيسية</title>
+
+    <!-- استدعاء خط عربي جميل من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف الأنماط المشترك -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-navy">
+
+    <!-- ===== شريط التنقل المشترك ===== -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">🕌 دمشق</a>
+            <nav class="nav-links">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="landmarks.html">المعالم</a>
+                <a href="heritage.html">التراث</a>
+                <a href="food.html">الأطعمة</a>
+                <a href="tour-plan.html">البرنامج</a>
+                <a href="contact.html">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== القسم الرئيسي (Hero) مع عنوان ترحيبي ===== -->
+    <section class="hero">
+        <h1>أهلاً بكم في دمشق</h1>
+        <p>أقدم عاصمة مأهولة في التاريخ، حيث تتعانق الحضارة العريقة مع عبق الياسمين وأزقة المدينة القديمة.</p>
+        <a href="landmarks.html" class="btn">اكتشف المعالم</a>
+    </section>
+
+    <!-- ===== قسم نبذة تعريفية عن المدينة (نص + صورة) ===== -->
+    <section class="section">
+        <div class="container about">
+            <!-- العمود النصي -->
+            <div class="about-text">
+                <h2>مدينة الياسمين</h2>
+                <p>تُعدّ دمشق من أقدم المدن المأهولة باستمرار في العالم، إذ يعود تاريخها إلى آلاف السنين. شهدت أسوارها مرور حضارات عظيمة تركت بصماتها في معالمها وأسواقها وبيوتها العتيقة.</p>
+                <p>يُطلق عليها لقب «مدينة الياسمين» لانتشار هذه الزهرة العطرة في حاراتها وبيوتها، فتمنحها رائحةً وروحاً لا تُنسى. وهي مدينة تجمع بين أصالة الماضي ونبض الحاضر.</p>
+                <a href="heritage.html" class="btn">تعرّف على تراثنا</a>
+            </div>
+            <!-- العمود المصوّر -->
+            <div class="about-image">
+                <img src="images/qasioun.jpg" alt="منظر لمدينة دمشق القديمة">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم لمحات سريعة عن المدينة (بطاقات Grid) ===== -->
+    <section class="section section-panel">
+        <div class="container">
+            <h2 class="section-title">لمحات من دمشق</h2>
+            <p class="section-subtitle">جولة مختصرة في أبرز ما تشتهر به المدينة من معالم وتراث ومأكولات.</p>
+
+            <div class="cards-grid">
+                <!-- بطاقة 1 -->
+                <article class="card">
+                    <img src="images/umayyad-mosque.jpg" alt="المسجد الأموي">
+                    <div class="card-body">
+                        <h3>المعالم السياحية</h3>
+                        <p>المسجد الأموي، قلعة دمشق، والأسواق العتيقة شاهدةٌ على عراقة المدينة.</p>
+                        <a href="landmarks.html">عرض المزيد ←</a>
+                    </div>
+                </article>
+
+                <!-- بطاقة 2 -->
+                <article class="card">
+                    <img src="images/mosaic.jpg" alt="التراث الدمشقي">
+                    <div class="card-body">
+                        <h3>التراث والثقافة</h3>
+                        <p>الصناعات اليدوية والفنون الدمشقية التي توارثتها الأجيال عبر القرون.</p>
+                        <a href="heritage.html">عرض المزيد ←</a>
+                    </div>
+                </article>
+
+                <!-- بطاقة 3 -->
+                <article class="card">
+                    <img src="images/kibbeh.jpg" alt="الأطعمة الدمشقية">
+                    <div class="card-body">
+                        <h3>الأطعمة والمطاعم</h3>
+                        <p>المطبخ الدمشقي الغني بنكهاته الأصيلة من الفتة إلى الحلويات الشهية.</p>
+                        <a href="food.html">عرض المزيد ←</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم المميّزات (لماذا تزور دمشق؟) ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">لماذا تزور دمشق؟</h2>
+            <p class="section-subtitle">أسباب تجعل من زيارة دمشق تجربة لا تُنسى.</p>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="icon">🏛️</div>
+                    <h3>تاريخ عريق</h3>
+                    <p>آلاف السنين من الحضارة في كل زاوية من زواياها.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🌸</div>
+                    <h3>عبق الياسمين</h3>
+                    <p>حارات تفوح منها رائحة الياسمين الدمشقي الأصيل.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🍽️</div>
+                    <h3>مطبخ غنيّ</h3>
+                    <p>أطباق وحلويات شهيرة تشتهر بها المدينة عالمياً.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🛍️</div>
+                    <h3>أسواق تاريخية</h3>
+                    <p>سوق الحميدية ومدحت باشا بنكهتهما الأصيلة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== التذييل المشترك ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- عمود تعريفي -->
+                <div class="footer-col">
+                    <h3>🕌 دمشق</h3>
+                    <p>موقع تعريفي بمدينة دمشق، أقدم عاصمة مأهولة في التاريخ ومدينة الياسمين.</p>
+                </div>
+                <!-- عمود روابط سريعة -->
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="landmarks.html">المعالم السياحية</a>
+                    <a href="heritage.html">التراث والثقافة</a>
+                    <a href="food.html">الأطعمة والمطاعم</a>
+                    <a href="tour-plan.html">برنامج سياحي ليوم</a>
+                </div>
+                <!-- عمود تواصل -->
+                <div class="footer-col">
+                    <h3>تواصل معنا</h3>
+                    <p>📍 دمشق، سوريا</p>
+                    <p>📞 +963 11 000 0000</p>
+                    <p>✉️ info@damascus.sy</p>
+                </div>
+            </div>
+            <!-- سطر حقوق النشر -->
+            <div class="footer-bottom">
+                <p>© 2026 موقع التعريف بمدينة دمشق — جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

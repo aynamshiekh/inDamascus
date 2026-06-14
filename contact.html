@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     صفحة التواصل مع نموذج (Form) للتواصل والاستفسارات
+     ============================================================ -->
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دمشق | تواصل معنا</title>
+
+    <!-- استدعاء الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف الأنماط المشترك -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-purple">
+
+    <!-- ===== شريط التنقل المشترك ===== -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">🕌 دمشق</a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="landmarks.html">المعالم</a>
+                <a href="heritage.html">التراث</a>
+                <a href="food.html">الأطعمة</a>
+                <a href="tour-plan.html">البرنامج</a>
+                <a href="contact.html" class="active">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== ترويسة الصفحة الداخلية ===== -->
+    <section class="page-header">
+        <h1>تواصل معنا</h1>
+        <p>يسعدنا تواصلكم معنا للاستفسار أو لتنظيم زيارتكم إلى مدينة دمشق.</p>
+    </section>
+
+    <!-- ===== قسم النموذج ومعلومات التواصل ===== -->
+    <section class="section">
+        <div class="container">
+            <!-- حاوية من عمودين باستخدام Flexbox -->
+            <div class="form-wrapper">
+
+                <!-- العمود الأول: نموذج التواصل -->
+                <div class="contact-form">
+                    <h2>أرسل لنا رسالة</h2>
+
+                    <!-- نموذج بسيط (action و method تجريبية بدون خادم فعلي) -->
+                    <form action="#" method="post">
+
+                        <!-- حقل الاسم -->
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+                        </div>
+
+                        <!-- حقل البريد الإلكتروني -->
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                        </div>
+
+                        <!-- حقل رقم الهاتف -->
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+963 9XX XXX XXX">
+                        </div>
+
+                        <!-- قائمة منسدلة لموضوع الرسالة -->
+                        <div class="form-group">
+                            <label for="subject">موضوع الرسالة</label>
+                            <select id="subject" name="subject">
+                                <option value="">اختر الموضوع</option>
+                                <option value="tourism">استفسار سياحي</option>
+                                <option value="booking">تنظيم زيارة</option>
+                                <option value="suggestion">اقتراح أو ملاحظة</option>
+                                <option value="other">موضوع آخر</option>
+                            </select>
+                        </div>
+
+                        <!-- مربع نص الرسالة -->
+                        <div class="form-group">
+                            <label for="message">نص الرسالة</label>
+                            <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+
+                        <!-- زر الإرسال -->
+                        <button type="submit" class="btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+
+                <!-- العمود الثاني: معلومات التواصل -->
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <p class="info-intro">يمكنكم التواصل معنا مباشرةً عبر الوسائل التالية:</p>
+
+                    <!-- العنوان -->
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <span>دمشق القديمة، سوريا</span>
+                    </div>
+
+                    <!-- الهاتف -->
+                    <div class="info-item">
+                        <span class="icon">📞</span>
+                        <span>+963 11 000 0000</span>
+                    </div>
+
+                    <!-- البريد -->
+                    <div class="info-item">
+                        <span class="icon">✉️</span>
+                        <span>info@damascus.sy</span>
+                    </div>
+
+                    <!-- ساعات العمل -->
+                    <div class="info-item">
+                        <span class="icon">🕐</span>
+                        <span>يومياً من 9 صباحاً حتى 6 مساءً</span>
+                    </div>
+
+                    <!-- روابط التواصل الاجتماعي -->
+                    <div class="info-item">
+                        <span class="icon">🌐</span>
+                        <span>تابعونا على مواقع التواصل الاجتماعي</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== التذييل المشترك ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>🕌 دمشق</h3>
+                    <p>موقع تعريفي بمدينة دمشق، أقدم عاصمة مأهولة في التاريخ ومدينة الياسمين.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="landmarks.html">المعالم السياحية</a>
+                    <a href="heritage.html">التراث والثقافة</a>
+                    <a href="food.html">الأطعمة والمطاعم</a>
+                    <a href="tour-plan.html">برنامج سياحي ليوم</a>
+                </div>
+                <div class="footer-col">
+                    <h3>تواصل معنا</h3>
+                    <p>📍 دمشق، سوريا</p>
+                    <p>📞 +963 11 000 0000</p>
+                    <p>✉️ info@damascus.sy</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 موقع التعريف بمدينة دمشق — جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

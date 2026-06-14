@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     صفحة البرنامج السياحي ليوم واحد في دمشق
+     مبنية بعناصر HTML5 الدلالية (header, nav, main, section, article, footer)
+     ============================================================ -->
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دمشق | برنامج سياحي ليوم واحد</title>
+
+    <!-- استدعاء الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف الأنماط المشترك نفسه (دون ملف CSS جديد) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-emerald">
+
+    <!-- ===== شريط التنقل المشترك (عنصر header دلالي) ===== -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">🕌 دمشق</a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="landmarks.html">المعالم</a>
+                <a href="heritage.html">التراث</a>
+                <a href="food.html">الأطعمة</a>
+                <a href="tour-plan.html" class="active">البرنامج</a>
+                <a href="contact.html">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== المحتوى الرئيسي للصفحة (عنصر main دلالي) ===== -->
+    <main>
+
+        <!-- ===== القسم الرئيسي (Hero) بصورة وعنوان جذّاب ===== -->
+        <section class="hero">
+            <h1>برنامج سياحي ليوم واحد في دمشق</h1>
+            <p>خطّة متكاملة من الصباح حتى المساء تأخذك في رحلة بين أبرز معالم دمشق وأسواقها ومطاعمها التراثية.</p>
+            <a href="#timeline" class="btn">ابدأ الجولة</a>
+        </section>
+
+        <!-- ===== قسم المخطط الزمني للبرنامج (Timeline / Schedule) ===== -->
+        <section class="section" id="timeline">
+            <div class="container">
+                <h2 class="section-title">جدول اليوم السياحي</h2>
+                <p class="section-subtitle">ست محطات موزّعة على ساعات اليوم لتعيش تجربة دمشقية متكاملة.</p>
+
+                <!-- الخط الزمني: كل محطة بطاقة تحتوي صورة ووقتاً واسماً ووصفاً -->
+                <div class="timeline">
+
+                    <!-- المحطة 1: الجامع الأموي -->
+                    <article class="timeline-item">
+                        <div class="timeline-card">
+                            <img src="images/umayyad-mosque.jpg" alt="الجامع الأموي">
+                            <div class="timeline-card-body">
+                                <!-- عنصر time الدلالي لتمثيل الوقت -->
+                                <time class="timeline-time" datetime="09:00">9:00 صباحاً</time>
+                                <h3>زيارة الجامع الأموي</h3>
+                                <p>ابدأ يومك بزيارة الجامع الأموي الكبير، تحفة العمارة الإسلامية وأحد أقدم وأعظم المساجد في العالم.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- المحطة 2: سوق الحميدية -->
+                    <article class="timeline-item">
+                        <div class="timeline-card">
+                            <img src="images/hamidiyah-souq.jpg" alt="سوق الحميدية">
+                            <div class="timeline-card-body">
+                                <time class="timeline-time" datetime="11:00">11:00 صباحاً</time>
+                                <h3>جولة في سوق الحميدية</h3>
+                                <p>تجوّل في أشهر أسواق دمشق المسقوفة، بين محلات الأقمشة والحلويات والتحف التراثية وعبق التاريخ.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- المحطة 3: الغداء -->
+                    <article class="timeline-item">
+                        <div class="timeline-card">
+                            <img src="images/fattah.jpg" alt="وجبة غداء دمشقية">
+                            <div class="timeline-card-body">
+                                <time class="timeline-time" datetime="13:00">1:00 ظهراً</time>
+                                <h3>تناول الغداء</h3>
+                                <p>استرح وتذوّق أشهى الأطباق الدمشقية من الفتّة والكبّة والمحاشي في أحد المطاعم الشعبية.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- المحطة 4: قصر العظم -->
+                    <article class="timeline-item">
+                        <div class="timeline-card">
+                            <img src="images/azm-palace.jpg" alt="قصر العظم">
+                            <div class="timeline-card-body">
+                                <time class="timeline-time" datetime="15:00">3:00 عصراً</time>
+                                <h3>زيارة قصر العظم</h3>
+                                <p>اكتشف روعة العمارة الدمشقية في قصر العظم بفنائه الواسع ونوافيره وزخارفه الخشبية البديعة.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- المحطة 5: دمشق القديمة -->
+                    <article class="timeline-item">
+                        <div class="timeline-card">
+                            <img src="images/straight-street.jpg" alt="أزقّة دمشق القديمة">
+                            <div class="timeline-card-body">
+                                <time class="timeline-time" datetime="17:00">5:00 مساءً</time>
+                                <h3>جولة في دمشق القديمة</h3>
+                                <p>تمشَّ في الأزقّة العتيقة بين البيوت الدمشقية التقليدية واستمتع بعبق الياسمين قبيل الغروب.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- المحطة 6: العشاء في مطعم تراثي -->
+                    <article class="timeline-item">
+                        <div class="timeline-card">
+                            <img src="images/damascene-house.jpg" alt="عشاء في مطعم تراثي">
+                            <div class="timeline-card-body">
+                                <time class="timeline-time" datetime="20:00">8:00 مساءً</time>
+                                <h3>عشاء في مطعم تراثي</h3>
+                                <p>اختم يومك بعشاء أصيل في بيت دمشقي قديم تحوّل إلى مطعم، وسط أجواء تراثية لا تُنسى.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== قسم نصائح سريعة لتنظيم اليوم (Grid) ===== -->
+        <section class="section section-panel">
+            <div class="container">
+                <h2 class="section-title">نصائح لتنظيم يومك</h2>
+                <p class="section-subtitle">إرشادات بسيطة تساعدك على الاستمتاع بالبرنامج بأفضل صورة.</p>
+
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="icon">👟</div>
+                        <h3>حذاء مريح</h3>
+                        <p>ستمشي كثيراً بين الأزقّة والأسواق، فاحرص على حذاء مريح.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon">💧</div>
+                        <h3>ماء وقبّعة</h3>
+                        <p>احمل الماء وقبّعة خاصةً في فصل الصيف لتجنّب الحرارة.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon">📷</div>
+                        <h3>وثّق اللحظات</h3>
+                        <p>لا تنسَ كاميرتك لالتقاط جمال العمارة الدمشقية.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="icon">🕐</div>
+                        <h3>التزم بالوقت</h3>
+                        <p>اتّبع الجدول لتتمكّن من زيارة جميع المحطات بهدوء.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== التذييل المشترك (عنصر footer دلالي) ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>🕌 دمشق</h3>
+                    <p>موقع تعريفي بمدينة دمشق، أقدم عاصمة مأهولة في التاريخ ومدينة الياسمين.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="landmarks.html">المعالم السياحية</a>
+                    <a href="heritage.html">التراث والثقافة</a>
+                    <a href="food.html">الأطعمة والمطاعم</a>
+                    <a href="tour-plan.html">برنامج سياحي ليوم</a>
+                </div>
+                <div class="footer-col">
+                    <h3>تواصل معنا</h3>
+                    <p>📍 دمشق، سوريا</p>
+                    <p>📞 +963 11 000 0000</p>
+                    <p>✉️ info@damascus.sy</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 موقع التعريف بمدينة دمشق — جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

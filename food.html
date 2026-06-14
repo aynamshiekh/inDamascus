@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     صفحة الأطعمة والمطاعم في مدينة دمشق
+     ============================================================ -->
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دمشق | الأطعمة والمطاعم</title>
+
+    <!-- استدعاء الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف الأنماط المشترك -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-burgundy">
+
+    <!-- ===== شريط التنقل المشترك ===== -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">🕌 دمشق</a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="landmarks.html">المعالم</a>
+                <a href="heritage.html">التراث</a>
+                <a href="food.html" class="active">الأطعمة</a>
+                <a href="tour-plan.html">البرنامج</a>
+                <a href="contact.html">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== ترويسة الصفحة الداخلية ===== -->
+    <section class="page-header">
+        <h1>الأطعمة والمطاعم</h1>
+        <p>نكهات المطبخ الدمشقي الأصيل من الأطباق الرئيسية إلى الحلويات الشهية.</p>
+    </section>
+
+    <!-- ===== شبكة بطاقات الأطباق الدمشقية ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">أطباق دمشقية شهيرة</h2>
+            <p class="section-subtitle">مائدة غنيّة بالنكهات الأصيلة التي تشتهر بها مطابخ دمشق.</p>
+
+            <div class="cards-grid">
+                <!-- طبق 1 -->
+                <article class="card">
+                    <img src="images/fattah.jpg" alt="الفتة الدمشقية">
+                    <div class="card-body">
+                        <span class="badge">طبق رئيسي</span>
+                        <h3>الفتّة الشامية</h3>
+                        <p>خبز مقرمش مع الحمّص واللبن والسمن البلدي، طبق صباحي محبوب على الموائد الدمشقية.</p>
+                    </div>
+                </article>
+
+                <!-- طبق 2 -->
+                <article class="card">
+                    <img src="images/kibbeh.jpg" alt="الكبة الدمشقية">
+                    <div class="card-body">
+                        <span class="badge">طبق رئيسي</span>
+                        <h3>الكبّة بأنواعها</h3>
+                        <p>من الكبّة المقلية إلى الكبّة باللبن والكبّة السماقية، فنٌّ دمشقي بامتياز.</p>
+                    </div>
+                </article>
+
+                <!-- طبق 3 -->
+                <article class="card">
+                    <img src="images/dolma.jpg" alt="ورق العنب">
+                    <div class="card-body">
+                        <span class="badge">مقبّلات</span>
+                        <h3>المحاشي وورق العنب</h3>
+                        <p>خضار وورق عنب محشوّة بالأرز واللحم، تُطهى بعناية وتُقدّم في المناسبات.</p>
+                    </div>
+                </article>
+
+                <!-- طبق 4 -->
+                <article class="card">
+                    <img src="images/shawarma.jpg" alt="الشاورما">
+                    <div class="card-body">
+                        <span class="badge">وجبة شعبية</span>
+                        <h3>الشاورما الشامية</h3>
+                        <p>لحم متبّل يُشوى على السيخ الدوّار، تشتهر بها مطاعم دمشق وأكشاكها الشعبية.</p>
+                    </div>
+                </article>
+
+                <!-- طبق 5 (حلويات) -->
+                <article class="card">
+                    <img src="images/baklava.png" alt="البقلاوة">
+                    <div class="card-body">
+                        <span class="badge">حلويات</span>
+                        <h3>البقلاوة والحلويات</h3>
+                        <p>طبقات رقيقة من العجين محشوّة بالفستق والجوز ومغموسة بالقطر، حلوى دمشقية عريقة.</p>
+                    </div>
+                </article>
+
+                <!-- طبق 6 (مشروبات) -->
+                <article class="card">
+                    <img src="images/booza.jpg" alt="البوظة الدمشقية">
+                    <div class="card-body">
+                        <span class="badge">مشروبات وحلويات</span>
+                        <h3>البوظة على الطريقة الشامية</h3>
+                        <p>بوظة مطّاطية مدقوقة باليد ومغطّاة بالفستق الحلبي، تجربة دمشقية لا تُنسى.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم نصائح للزائر حول المطاعم (Features) ===== -->
+    <section class="section section-panel">
+        <div class="container">
+            <h2 class="section-title">نصائح لتجربة الطعام</h2>
+            <p class="section-subtitle">إرشادات بسيطة تجعل تجربتك مع المطبخ الدمشقي أكثر متعة.</p>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="icon">🍵</div>
+                    <h3>ابدأ بالمقبّلات</h3>
+                    <p>جرّب تشكيلة المازة الدمشقية قبل الطبق الرئيسي.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🏺</div>
+                    <h3>المطاعم التراثية</h3>
+                    <p>تناول الطعام في بيت دمشقي قديم لتجربة أصيلة.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🍯</div>
+                    <h3>لا تفوّت الحلويات</h3>
+                    <p>اختم وجبتك بالبقلاوة أو البوظة الشامية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== التذييل المشترك ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>🕌 دمشق</h3>
+                    <p>موقع تعريفي بمدينة دمشق، أقدم عاصمة مأهولة في التاريخ ومدينة الياسمين.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="landmarks.html">المعالم السياحية</a>
+                    <a href="heritage.html">التراث والثقافة</a>
+                    <a href="food.html">الأطعمة والمطاعم</a>
+                    <a href="tour-plan.html">برنامج سياحي ليوم</a>
+                </div>
+                <div class="footer-col">
+                    <h3>تواصل معنا</h3>
+                    <p>📍 دمشق، سوريا</p>
+                    <p>📞 +963 11 000 0000</p>
+                    <p>✉️ info@damascus.sy</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 موقع التعريف بمدينة دمشق — جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
